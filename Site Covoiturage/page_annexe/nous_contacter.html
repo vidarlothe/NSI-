@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/assets/CSS/style.css" />
+    <script src="/assets/JS/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CoCo-Blaise</title>
+    <link rel="shortcut icon" href="/assets/Image/logo1.png" />
+  </head>
+  <body>
+    <header>
+      <section>
+        <div class="list">
+          <nav>
+            <ul>
+              <li>
+                <a href="/index.html"
+                  ><img src="/assets/Image/logo.png" alt="logo de Coco-Blaise"
+                /></a>
+              </li>
+              <li><a href="/page_annexe/profil.html">Profil</a></li>
+              <li>
+                <a href="/page_annexe/reservation.html">Reservation</a>
+              </li>
+              <li>
+                <a href="/page_annexe/nous_contacter.html">Nous contacter</a>
+              </li>
+              <li><a href="#" class="connexion-link">Connexion</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- Fenêtre modale -->
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <h2>Connexion / Inscription</h2>
+            <!-- Ajoutez ici votre contenu de connexion / inscription -->
+            <form action="action.php" method="post">
+              <label for="surname">Prénom :</label
+              ><input
+                id="surname"
+                type="text"
+                placeholder="Entrez votre prénom"
+              /><br />
+              <label for="name">Nom :</label
+              ><input
+                id="name"
+                type="text"
+                placeholder="Entrez votre nom"
+              /><br />
+              <label for="age">Age :</label>
+              <input
+                type="number"
+                id="age"
+                min="0"
+                max="100"
+                step="1"
+                placeholder="Entrez votre âge"
+              /><br />
+              <label for="gender">genre</label>
+              <select id="gender">
+                <option value="men">Homme</option>
+                <option value="women">Femme</option>
+                <option value="unspécified">non-précisé</option></select
+              ><br />
+              <label for="phonenumber">Numéro de téléphone :</label
+              ><input
+                id="phonenumber"
+                type="number"
+                placeholder="Entrez votre numéro de téléphone"
+                min="687100000"
+                max="687999999"
+              /><br />
+              <label
+                ><input type="checkbox" />Accecpter les conditions génerals
+                d'utilisation</label
+              ><br />
+              <input type="submit" value="valider" />
+            </form>
+            <button id="modal-close">Fermer</button>
+          </div>
+        </div>
+      </section>
+    </header>
+    <main>
+      <section>
+        <div class="grid-container">
+          <img
+            class="img1"
+            src="/assets/Image/pose.png"
+            alt="Quelqu'un à coté de sa voiture"
+          />
+          <h1>CoCo-Blaise</h1>
+          <img
+            class="img2"
+            src="/assets/Image/route.png"
+            alt="route en nouvelle caledonie"
+          />
+        </div>
+        <div class="search">
+          <input type="text" id="searchInput" placeholder="Rechercher..." />
+          <button id="searchButton">
+            <img
+              src="/assets/Image/loupe_search_icon.png"
+              alt="loupe search icon"
+            />
+          </button>
+        </main>
+        <footer>
+          <p>
+            credit :
+            <br />
+            clipart route PNG Conçu par 温馨 à partir de
+            <a
+              href="https://fr.pngtree.com/freepng/road_2111556.html?sol=downref&id=bef"
+              >pngtree©️</a
+            >
+            <br />
+            voiturette noir conçu par
+            <a href="https://www.ligier.fr">ligier Group©️</a>
+            <br />
+            personne à coté de la voiturette conçu par 4x6 et provient de
+            <a
+              href="https://www.istockphoto.com/photo/african-ethnicity-male-dancing-in-front-of-white-background-wearing-t-shirt-gm1246906885-363233702"
+              >Istock™</a
+            >
+            <br />
+            Droit d'auteur du Lycée Blaise Pascal© 2023 Votre entreprise de
+            covoiturage. Tous droits réservés.
+          </p>
+        </footer>
+      </body>
+    </html>
+    

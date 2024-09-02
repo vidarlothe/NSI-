@@ -1,0 +1,326 @@
+
+/* style d'ecriture pour titre */
+@font-face {
+  font-family: "lobster";
+  src: url(/assets/fonts/Lobster-Regular.ttf);
+}
+/* style d'écriture page */
+@font-face {
+  font-family: "Poppins";
+  src: url(/assets/fonts/Poppins-Regular.ttf);
+}
+*{
+  margin: 0;
+  border: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  margin:20px;
+  font-size: 1rem;
+  line-height: 1.7;
+  background: url(/assets/Image/bgimg.jpg) center/cover;
+  min-height: 100vh;
+}
+.banniere,.main{
+  background-color: rgba(255, 255, 255, 0.82);/*couleur du fond*/
+  border-radius: 20px;
+}
+header,.banniere,.main,footer{
+  padding: 20px;
+  margin-bottom: 50px;
+}
+header,footer{
+  background-color: rgba(0, 0, 0, 0.95);
+  border-radius: 20px;
+}
+header {
+  margin-bottom: 50px;
+  min-height: 80px;
+  padding: 20px 10px;
+}
+h1 {
+  font-family: "lobster", sans-serif;
+  font-size: 6vw;
+  text-align: center;
+  text-shadow: -50px -20px 10px #0000001a;;
+}
+main {
+  text-align: center;
+}
+footer {
+  word-spacing : 0.2rem;
+  line-height: 1.5;
+  text-align:center;
+  color: #FFF;
+}
+.menu ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90px;
+}
+.menu li {
+  display: flex;
+  justify-content: center;
+  min-width: 20vw;
+}
+.menu a {
+  font-size: 1.25rem;
+  color: #bebbbb;
+  transition: 0.5s;
+}
+.menu img {
+  text-align: center;
+  height: 65px;
+  width: auto;
+  transition: 0.5s;
+}
+.menu a:hover {
+  font-size: 1.5rem;
+  color: #FFF;
+}
+.menu img:hover{
+  height: 70px;
+  width: auto;
+}
+
+.banniere {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.banniere img {
+  height: auto;
+  width: 15vw
+  ;
+}
+
+.main{
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.lien{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.lien a{
+  min-height: 5rem;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.lien p{
+  margin-left: 2vw;
+}
+.lien a:hover{
+  font-size: 1.8rem;
+}
+
+.voiturette{
+  display: flex;
+  justify-content: space-around;
+}
+#voituretteimg{
+  width: 20vw;
+}
+
+.inscription {
+  text-align: right ;
+  height: auto;
+  width: 5vw;
+}
+
+#presentation{
+  line-height: 2;
+font-size: 1.2rem;
+}
+
+#cocoblaise{
+  font-family: "lobster", sans-serif;
+  font-size: 1.7rem;
+}
+
+@media screen and (max-width: 1100px) {
+  .banniere, .main, footer {
+    padding: 40px;
+}
+  .menu a {
+    font-size: 1.4rem;
+  }
+  .menu a:hover{
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .menu ul {
+    min-height: 100px;
+  }
+  .menu img {
+    height: 75px;
+  }
+  .menu img:hover{
+    height: 85px;
+  }
+  .menu a:hover{
+    font-size: 1.6rem;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .banniere, .main, footer {
+    padding: 30px;
+}
+  .menu a {
+    font-size: 1.35rem;
+  }
+  .menu a:hover{
+    font-size: 1.5rem;
+  }
+
+}
+@media screen and (max-width: 950px) {
+  .menu ul {
+    min-height: 95px;
+  }
+  .menu img {
+    height: 70px;
+  }
+  .menu img:hover{
+    height: 80px;
+  }
+  .menu a{
+    font-size: 1.3rem;
+  }
+  .menu a:hover{
+    font-size: 1.45rem;
+  }
+  footer{
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .banniere, .main, footer {
+    padding: 25px;
+}
+  .menu a{
+    font-size: 1.25rem;
+  }
+  .menu a:hover{
+    font-size: 1.38rem;
+  }
+}
+@media screen and (max-width: 850px) {
+  .menu ul {
+    min-height: 90px;
+  }
+  .menu img {
+    height: 68px;
+  }
+  .menu img:hover{
+    height: 75px;
+  }
+  .menu a{
+    font-size: 1.2rem;
+  }
+  .menu a:hover{
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .banniere, .main, footer {
+    padding: 20px;
+}
+  .menu a{
+    font-size: 1.1rem;
+  }
+  .menu a:hover{
+    font-size: 1.20rem; 
+  }
+  footer{
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 750px) {
+  .main{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .menu ul {
+    min-height: 85px;
+  }
+  .menu img{
+    height: 63px;
+  }
+  .menu img:hover{
+   height: 70px; 
+  }
+  .menu a{
+    font-size: 1.05rem;
+  }
+  .menu a:hover{
+    font-size: 1.15rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .menu li{
+    max-width: 16vw;
+  }
+  .menu a{
+    font-size: 0.8rem;
+  }
+  .menu a:hover{
+    font-size: 0.95rem; 
+  }
+  .menu img{
+    height: 60px;
+  }
+  .menu img:hover{
+   height: 70px; 
+  }
+  .banniere{
+    padding: 30px;
+  }
+  footer{
+    font-size: 0.52rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .menu a {
+    font-size: 0.75rem;
+}
+.menu a:hover{
+  font-size: 0.85rem; 
+}
+}
+@media screen and (max-width: 500px) {
+
+  header{
+    padding: 10px;
+  }
+  .menu ul {
+    min-height: 75px;
+  }
+  .menu a {
+    font-size: 0.60rem;
+}
+.menu a:hover{
+  font-size: 0.70rem; 
+}
+
+}
+@media screen and (max-width: 450px) {}
+@media screen and (max-width: 400px) {}
+@media screen and (max-width: 350px) {}
+@media screen and (max-width: 300px) {}
+@media screen and (max-width: 250px) {}
+@media screen and (max-width: 200px) {}

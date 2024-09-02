@@ -1,0 +1,136 @@
+@font-face {
+    font-family: "lobster";
+    src: url(/assets/fonts/Lobster-Regular.ttf);
+  }
+  /* style d'écriture page */
+  @font-face {
+    font-family: "Poppins";
+    src: url(/assets/fonts/Poppins-Regular.ttf);
+  }
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+  }
+  body {
+    margin:20px;
+    font-size: 1rem;
+    line-height: 1.7;
+    background-color: #f4f4f4;
+  }
+
+  header,footer{
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 20px;
+    margin-bottom: 50px;
+  }
+  header {
+    margin-bottom: 50px;
+    min-height: 80px;
+    padding: 20px 10px;
+  }
+  h1 {
+    font-family: "lobster", sans-serif;
+    font-size: 6vw;
+    text-align: center;
+    text-shadow: -50px -20px 10px #0000001a;;
+  }
+  footer {
+    word-spacing : 0.2rem;
+    line-height: 1.5;
+    text-align:center;
+    color: #FFF;
+  }
+  .menu ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90px;
+  }
+  .menu li {
+    display: flex;
+    justify-content: center;
+    min-width: 20vw;
+  }
+  .menu a {
+    font-size: 1.25rem;
+    color: #bebbbb;
+    transition: 0.5s;
+  }
+  .menu img {
+    text-align: center;
+    height: 65px;
+    width: auto;
+    transition: 0.5s;
+  }
+  .menu a:hover {
+    font-size: 1.5rem;
+    color: #FFF;
+  }
+  .menu img:hover{
+    height: 70px;
+    width: auto;
+  }
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 100px auto; /* Centrer le container */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.form-group input[type="submit"] {
+    background-color: #5cb85c;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.back-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}

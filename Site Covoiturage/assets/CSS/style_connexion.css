@@ -1,0 +1,172 @@
+      /* style d'ecriture pour titre */
+@font-face {
+    font-family: "lobster";
+    src: url(/assets/fonts/Lobster-Regular.ttf);
+  }
+  /* style d'écriture page */
+  @font-face {
+    font-family: "Poppins";
+    src: url(/assets/fonts/Poppins-Regular.ttf);
+  }
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+  }
+body {
+    margin:20px;
+    font-size: 1rem;
+    line-height: 1.7;
+    background: url(/assets/Image/bgimg.jpg) center/cover;
+    min-height: 100vh;
+}
+
+header,footer{
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+header {
+    margin-bottom: 50px;
+    min-height: 80px;
+    padding: 20px 10px;
+}
+  
+h1 {
+    font-family: "lobster", sans-serif;
+    font-size: 6vw;
+    text-align: center;
+    text-shadow: -50px -20px 10px #0000001a;;
+}
+  
+footer {
+    word-spacing : 0.2rem;
+    line-height: 1.5;
+    text-align:center;
+    color: #FFF;
+  }
+  
+.menu ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90px;
+  }
+  .menu li {
+    display: flex;
+    justify-content: center;
+    min-width: 20vw;
+  }
+  .menu a {
+    font-size: 1.25rem;
+    color: #bebbbb;
+    transition: 0.5s;
+  }
+  .menu img {
+    text-align: center;
+    height: 65px;
+    width: auto;
+    transition: 0.5s;
+  }
+  .menu a:hover {
+    font-size: 1.5rem;
+    color: #FFF;
+  }
+  .menu img:hover{
+    height: 70px;
+    width: auto;
+  }
+
+/* Style pour le conteneur du formulaire de connexion */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px); /* Ajustez en fonction de la hauteur du header */
+    background-color: #f0f0f0; /* Couleur de fond claire pour contraster avec le noir */
+    padding: 20px;
+}
+
+.login-form-wrapper {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Réduction de la largeur du formulaire */
+}
+
+.login-form-wrapper h2 {
+    font-size: 1.4rem; /* Taille du sous-titre */
+    color: #000000; /* Couleur du texte */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px; /* Réduction de l'espace entre les champs */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: "border-color" 0.3s, "box-shadow" 0.3s;
+}
+
+.form-group input:focus {
+border-color: #000000; /* Bordure colorée au focus */
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+outline: none;
+}
+
+.form-group button {
+width: 100%;
+padding: 12px;
+background-color: #000000; /* Couleur de fond noire */
+color: #ffffff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+font-size: 1rem;
+transition: background-color 0.3s, transform 0.3s;
+}
+
+.form-group button:hover {
+background-color: #333333; /* Couleur de fond au survol */
+transform: scale(1.02);
+}
+
+.form-group button:active {
+background-color: #444444; /* Couleur de fond lors du clic */
+}
+
+.login-container p {
+text-align: center;
+margin-top: 20px;
+color: #333;
+}
+
+.login-container p a {
+color: #000000; /* Couleur du lien */
+text-decoration: none;
+font-weight: bold;
+}
+
+.login-container p a:hover {
+text-decoration: underline;
+}

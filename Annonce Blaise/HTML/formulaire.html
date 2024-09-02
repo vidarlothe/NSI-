@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter Un Produit</title>
+    <link rel="stylesheet" href="./assets/CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CSS (ça permet d'avoir des îcones jolies et gratuits :))-->
+    <script src="../JS/scriptMC.js"></script>
+        <script>
+            function getRandomInt(max) {
+              return Math.round(Math.random() * max);
+            }
+            function load_() {
+                document.getElementById('productPicture').addEventListener('click', function() {
+                    document.getElementById('product-image').click();
+                });
+                placeholderlst = ["C'est une friteuse que je donne gratis.","C'est des baskets que j'avais acheté à Billabong, maintenant elle ne me serve plus, qui veut?","Ça fais 5 ans que je l'ais mais je suis prêt à m'en débarrasser, j'accepte toutes offres pertinentes!","Des jeans tout neufs! Je les donne donc c'est cadeau! 😜","BOOM BOOM BAM y'a ki ki veu ma BOOMBOX? 😎"]
+                document.getElementById("product-description").placeholder = "exemple: " + placeholderlst[getRandomInt(placeholderlst.length - 1)]
+            }
+            
+            function b_color() {
+                var b_color_ = document.getElementById("c_input_b")
+                var headers = document.getElementsByTagName('header')
+                var header = headers[0]
+                header.style.backgroundColor = b_color_.value
+            }
+            function b_color_txt() {
+                var b_color_ = document.getElementById("c_input_b_")
+                var as = document.getElementsByTagName('a')
+                var hones = document.getElementsByTagName('h1')
+                
+                for (var i = 0; i < as.length; i++) {
+                    as[i].color = b_color_.value
+                }
+                for (var i = 0; i < hones.length; i++) {
+                    hones[i].color = b_color_.value
+                }
+            }
+            
+            function display_img_product() {
+                var displayimg = document.getElementById("displayedImage") //document.getElementById("product-image-display");
+                var file = document.getElementById("product-image").files[0];
+
+                if (file) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        displayimg.src = e.target.result;
+                    }
+                    reader.readAsDataURL(file);
+                }
+                
+            }
+
+            function price_option_change() {
+                var sel_price = document.getElementById("select-price")
+                if (sel_price.value == "0") {
+                    document.getElementById("product-price").style.display = "none";
+                    document.getElementById("forWhat").style.display = "none";
+                }
+                if (sel_price.value == "1") {
+                    document.getElementById("product-price").style.display = "block";
+                    document.getElementById("product-price").type = "text";
+                    document.getElementById("forWhat").style.display = "block";
+                }
+                /*if (sel_price.value == "2") {
+                    document.getElementById("product-price").style.display = "none";
+                    document.getElementById("product-price").type = "text";
+                }
+                if (sel_price.value == "3") {
+                    document.getElementById("product-price").style.display = "block";
+                    document.getElementById("product-price").type = "text";
+                }*/
+            }
+
+            function type_option_change() {
+                var c_icon = document.getElementById("ProductTypeIcon");
+                var itproduct = document.getElementById("product-type");
+                if (itproduct.value == "indetermine") {
+                    c_icon.className = "fa fa-question";
+                }
+                if (itproduct.value == "divers") {
+                    c_icon.className = "fa fa-gift";
+                }
+                if (itproduct.value == "meuble") {
+                    c_icon.className = "fa fa-bed";
+                }
+                if (itproduct.value == "vetement") {
+                    c_icon.className = "fa fa-male";
+                }
+                if (itproduct.value == "jeux") {
+                    c_icon.className = "fa fa-gamepad";
+                }
+                if (itproduct.value == "nourriture") {
+                    c_icon.className = "fa fa-cutlery";
+                }
+            }
+            
+            function toggleForm() {
+                var form = document.getElementById("announcement-form");
+                var hcanvas = document.getElementById("CanvasHide");
+                if (form.style.display === "none" || form.style.display === "") {
+                    form.style.display = "block";
+                    hcanvas.style.display = "block";
+                } else {
+                    form.style.display = "none";
+                    hcanvas.style.display = "none";
+                }
+                var closebtn = document.createElement("i")
+                closebtn.className = "fa fa-times"
+                closebtn.onclick = function () {
+                    if (form.style.display === "none" || form.style.display === "") {
+                        hcanvas.style.display = "block";
+                        form.style.display = "block";
+                    } else {
+                        hcanvas.style.display = "none";
+                        form.style.display = "none";
+                    }
+                    closebtn.remove()
+                };
+                closebtn.style.margin = "20px";
+                closebtn.style.fontSize = "50px";
+                /*closebtn.style.top = "0px";
+                closebtn.style.right = "0px";*/
+                closebtn.margin = "10px";
+                closebtn.style.zIndex = 20;
+                closebtn.style.position = "absolute";
+                //document.body.append(closebtn);
+                
+                closebtn.style.width = "35px";
+                closebtn.style.color = "#EE5555"
+                closebtn.style.top = "-2%";
+                closebtn.style.right = "0%";
+                document.getElementById("fieldset-form").append(closebtn);
+            }
+            
+
+            function submitForm(event) {
+                event.preventDefault();
+                var form = document.getElementById("product-form");
+                var formData = new FormData(form);
+
+                fetch('http://localhost:3000/submit-product', {
+                    method: 'POST',
+                    body: formData
+                }).then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    window.open(`product-details.html?id=${data.id}`, '_blank');
+                    loadAnnouncements();  // Rafraîchir la liste des annonces après ajout
+                }).catch(error => console.error('Error:', error));
+            }
+
+            function loadAnnouncements(page = 1, type = '') {
+                fetch(`http://localhost:3000/produits?page=${page}`)
+                .then(response => response.text())
+                .then(data => {
+                    const productList = document.getElementById("product-list");
+                    productList.innerHTML = data;
+
+                    if (type) {
+                        const items = productList.querySelectorAll('tr[data-type]');
+                        items.forEach(item => {
+                            if (type === 'Tout' || item.getAttribute('data-type') === type) {
+                                item.style.display = 'table-row';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        });
+                    }
+                }).catch(error => console.error('Error:', error));
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+                loadAnnouncements();  // Charger les annonces au chargement de la page
+
+                // Ajouter des écouteurs d'événements pour les boutons de filtrage
+                document.querySelectorAll('nav ul li a').forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const type = e.target.textContent;
+                        loadAnnouncements(1, type);  // Recharger la première page avec le type sélectionné
+                    });
+                });
+            });
+        </script>
+
+
+</head>
+<body onload="load_()">
+    <header>
+        <h1><span class="lettre">A</span>nnonce <span class="lettre">B</span>laise</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Tout</a></li> <!-- Nouveau bouton "Tout" -->
+                <li><a href="#">Divers</a></li>
+                <li><a href="#">Meuble</a></li>
+                <li><a href="#">Vêtement</a></li>
+                <li><a href="#">Jeux</a></li>
+            </ul>
+        </nav>
+
+        <div class="user-info">
+            <span>Favoris</span>
+            <span>Se Connecter</span>
+        </div>
+    </header>
+    
+    <section id="announcement-form" style="display:block;">
+            <fieldset id="fieldset-form" style="position: relative; border: 2px solid; border-color: rgb(170, 180, 230); width:40%; margin-left: 25%; border-radius: 5px; background-color: rgb(231, 238, 255); z-index: 999;">
+                
+            <h2>Ajouter une nouvelle annonce <strong title="En fait on aurras aucun moyen de savoirs c'est qui puisque l'e-mail et le tel sont optionnels..." style="color: red; font-size: 20px; margin-left: 30px;">(SPAM INTERDIT)</strong></h2>
+                
+                <!-- <img alt="Image du produit" src="" id="product-image-display" style="border-radius: 5px; width: 64px; height: 64px;"> -->
+                
+            <form id="product-form" enctype="multipart/form-data" onsubmit="submitForm(event)">
+                
+                <label for="product-name">Nom du produit:</label>
+                <input id="product-name" name="productName" type="text" required>
+                
+                <label for="product-image">Image:</label>
+                <div class="product-picture" id="productPicture" style="margin-top: 5px;">
+                    <img id="displayedImage" src="./assets/images/add_image.png" alt="Image par défaut">
+                    <div class="overlay">
+                        <p style="margin-left: -20px; font-size: 15px;">Changer d'image</p>
+                    </div>
+                </div>
+                <input style="width: 0px; height: 0px; display: none;" type="file" id="product-image" name="productImage" accept="image/*" onchange="display_img_product()">
+
+                <label for="product-price">Prix:</label>
+                <select id="select-price" name="productPriceType" onchange="price_option_change()">
+                    <option value="0">Don</option>
+                    <option value="1">Troc</option>
+                </select>
+                <label id="forWhat" for="product-price" style="display: none;">Contre quoi? : <strong>(facultatif)</strong></label>
+                <input min="0" maxlength="100000" type="number" id="product-price" name="productPrice" style="display: none;">
+                
+                <label for="product-description">Description:</label>
+                <textarea type="text" id="product-description" style="width: 350px; height: 200px; font-family: cursive; margin-top: 5px;" placeholder="Mon objet est très grand et sert à faire des frites." required></textarea>
+
+                <label for="product-num">Numéro de téléphone: <strong>(facultatif)</strong></label>
+                <input type="tel" id="product-num" name="tel" pattern="[0-9]{2}.[0-9]{2}.[0-9]{2}" placeholder="exemple: 26.16.66">
+
+                <label>E-mail: <strong>(facultatif)</strong></label>
+                <input type="email" id="product-email" name="userEmail" placeholder="Jhon.Doe@blaisemail.com">
+                
+                <label> Type de produit :</label>
+                <i id="ProductTypeIcon" class="fa fa-question" aria-hidden="true" style="margin: auto; font-size: 25px;"></i>
+                <select id="product-type" name="productType" onchange="type_option_change()" required>
+                    <option value="indetermine">indéterminé</option>
+                    <option value="divers">divers</option>
+                    <option value="meuble">meuble</option>
+                    <option value="vetement">vêtement</option>
+                    <option value="jeux">jeux</option>
+                    <option value="nourriture">nourriture</option>
+                    
+                </select>
+                <label for="AgreementTermsCheckBox"></label>
+                <p style="font-size: 14px; color: red;">J'adhère au <a style="color: red;" onclick="window.open('./Conditions Dutilisations.html')" href="#"><strong>conditions d'utilisations</strong></a> et en conséquence prend toute(s) charge(s) de mes actions: <input style="position: absolute; margin-left:-12%; margin-top: 2px;" id="AgreementTermsCheckBox" type="checkbox" required></p>
+                <button type="submit">Ajouter</button>
+            </form>
+            </fieldset>
+        </section>
+</body>
